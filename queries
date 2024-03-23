@@ -1,0 +1,22 @@
+use sql6689792;
+SELECT * FROM userTable;
+SELECT * FROM messageTable;
+
+
+SELECT * FROM userTable WHERE userId = 135107 AND password = "Pass@123";
+
+CREATE TABLE messageTable (
+	messageId int,
+	userId int,
+	message varchar(255),
+	msg_time varchar(20),
+	primary key(messageId),
+	foreign key(userId) references userTable(userId)
+);
+
+CREATE TABLE userTable (
+	userId int,
+	name varchar(20),
+	password varchar(20),
+	primary key(userId)
+)
